@@ -1,0 +1,10 @@
+<div class="flex flex-column">
+    <div (click)="toggleLanguageSelection()" class="selected-language"> {{selectedLanguage.name}} <span>{{selectedLanguage.icon}}</span>  </div>
+    <div *ngIf="selectingLanguage" class="language-container flex flex-column flex-center">
+        <div *ngFor="let language of languages" class="language-item">
+            <div  (click)="setLanguage(language)">
+                {{language.name}} <span>{{language.icon}}</span> 
+            </div>
+            </div>
+    </div>
+</div>

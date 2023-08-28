@@ -1,0 +1,28 @@
+
+<div *ngIf="type === 'keyboard'"  class="keyboard-container">
+    <section class="keys-section flex flex-center">
+        <div (click)="addCharacter(key)" class="key flex flex-center" *ngFor=" let key of keys">
+            {{key}}
+        </div>
+    </section>
+    <section class="action-keys-section flex flex-center-x  flex-space-evenly">
+        <div (click)="toggleShift()" [ngClass]="{'green': isShift}" class="action-key flex flex-center">shift</div>
+        <div (click)="addCharacter(' ')" class="action-key flex flex-center">space</div>
+        <div class="action-key flex flex-center">enter</div>
+        <div (click)="removeCharacter()" class="action-key flex flex-center">backslack</div>
+    </section>
+</div>
+
+<div *ngIf="type === 'numpad'"  class="keyboard-container">
+    <section class="keys-section flex flex-center">
+        <div (click)="addCharacter(number)" class="key flex flex-center" *ngFor=" let number of numbers">
+            {{number}}
+        </div>
+    </section>
+    <section class="action-keys-section flex flex-center-x  flex-space-evenly">
+        <div (click)="toggleShift()" [ngClass]="{'green': isShift}" class="action-key flex flex-center">shift</div>
+        <div (click)="addCharacter(' ')" class="action-key flex flex-center">space</div>
+        <div class="action-key flex flex-center">enter</div>
+        <div (click)="removeCharacter()" class="action-key flex flex-center">backslack</div>
+    </section>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LanguageService } from './services/language-service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inShopTest';
+  selectedLanguageMap
+
+
+  constructor(public languageService : LanguageService){
+    this.selectedLanguageMap = this.languageService.getLanguageMap()
+  }
 }
