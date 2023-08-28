@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, fromEvent, merge, of } from 'rxjs';
+import { LanguageService } from 'src/app/services/language-service';
 import { OnScreenkeyboardService } from 'src/app/services/on-screenkeyboard.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { OnScreenkeyboardService } from 'src/app/services/on-screenkeyboard.serv
 })
 export class OnScreenKeyboardComponent implements OnInit {
   // type: 'keyboard' | 'numpad' = 'keyboard'
-  keys: string[] = [
+  keysEn: string[] = [
     'Q',
     'W',
     'E',
@@ -37,6 +38,12 @@ export class OnScreenKeyboardComponent implements OnInit {
     'N',
     'M',
   ];
+  keysIL: string[] = [
+   'ק','ר','א','ט','ו','ן','ם','פ','ש','ד','ג','כ','ע','י','ח','ל','ך','ף','ז','ס','ב','ה','נ','מ','צ','ת','ץ'
+  ];
+
+  keys: string[] = []
+
   numbers: string[] = ['1','2','3','4','5','6','7','8','9','0']
   
   currSentance: string = '';
@@ -46,7 +53,7 @@ export class OnScreenKeyboardComponent implements OnInit {
   keyPress$: Observable<Event>;
   keyRelease$: Observable<Event>;
 
-  constructor(private onScreenkeyboardService : OnScreenkeyboardService) {
+  constructor(private onScreenkeyboardService : OnScreenkeyboardService,private languageService : LanguageService) {
     this.keyPress$ = fromEvent(window, 'keydown');
     this.keyRelease$ = fromEvent(window, 'keyup');
     this.onScreenkeyboardService.inputValue$.subscribe(value => {
@@ -61,7 +68,8 @@ export class OnScreenKeyboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+   const currLanguage = this.languageService.selectedLanguage
+   this.keys = currLanguage === 'English' ? this.keysEn : this.keysIL
     const mergedEvents$ = merge(this.keyPress$, this.keyRelease$);
     //If time allows, add more features to keyboard
     mergedEvents$.subscribe(event => {

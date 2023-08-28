@@ -1,4 +1,4 @@
 <div style="height: 100%;" class="flex flex-column flex-space-evenly flex-center">
-  <div class="selection-box flex flex-center" routerLink="/login"> {{selectedLanguageMap?.login}} </div>
-  <div class="selection-box flex flex-center" routerLink="/register" > {{selectedLanguageMap?.register}} </div>
+  <div class="selection-box flex flex-center" routerLink="/login"> {{ languageService.getTranslation('login')}} </div>
+  <div class="selection-box flex flex-center" routerLink="/register" > {{languageService.getTranslation('register')}} </div>
 </div>

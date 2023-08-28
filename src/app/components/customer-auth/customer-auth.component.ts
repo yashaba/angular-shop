@@ -9,7 +9,7 @@ import { LanguageService } from 'src/app/services/language-service';
 export class CustomerAuthComponent implements OnInit {
   selectedLanguageMap: { login: string; register: string; back: string; loginByPhone: string; loginByFace: string; faceRecognition: string; setFace: string; fullName: string; next: string; phoneNumber: string; createAccount: string; reset: string; notSupported: string; } | { login: string; register: string; back: string; loginByPhone: string; loginByFace: string; faceRecognition: string; setFace: string; fullName: string; next: string; phoneNumber: string; createAccount: string; reset: string; notSupported: string; };
 
-  constructor(private languageService : LanguageService) {
+  constructor(public languageService : LanguageService) {
     this.selectedLanguageMap = this.languageService.getLanguageMap()
 
    }
