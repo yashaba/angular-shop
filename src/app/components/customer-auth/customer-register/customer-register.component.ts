@@ -4,11 +4,19 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { fullNameValidator } from 'src/app/validators/fullName.validator';
 import { LanguageService } from 'src/app/services/language-service';
+import {trigger,state,style,animate,transition} from '@angular/animations';
 
 @Component({
   selector: 'app-customer-register',
   templateUrl: './customer-register.component.html',
-  styleUrls: ['./customer-register.component.scss']
+  styleUrls: ['./customer-register.component.scss'],
+  animations: [
+    trigger('slideFadeAnimation', [
+      state('void', style({ opacity: 0, transform: 'translateX(-10px)' })), // Initial state when entering
+      state('*', style({ opacity: 1, transform: 'translateX(0)' })), // Final state when in the DOM
+      transition(':enter', [animate('300ms ease-out')]), // Animation when entering
+    ]),
+  ]
 })
 export class CustomerRegisterComponent implements OnInit,AfterViewInit {
   parentInputValue: string = '';

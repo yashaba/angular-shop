@@ -1,13 +1,23 @@
 .selected-language {
-    background-color: grey;
+    background-color: #0a78d3;
     width: 100px;
+     img {
+        margin-left: 5px;
+     }
 }
 .language-container {
 background-color: white;
 }
 .language-item {
-    border: 1px blue solid;
-    width: 100px;
+    border: 1px #0a7ad39e solid;
+    width: 98px;
+    img {
+        margin-left: 5px;
+     }
 }
 
+
+.main-container{
+    z-index: 1;
+}
 
