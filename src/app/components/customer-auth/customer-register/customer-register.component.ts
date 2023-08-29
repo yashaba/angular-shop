@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angula
 import {OnScreenkeyboardService} from '../../../services/on-screenkeyboard.service'
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
-import { fullNameValidator } from 'src/app/validators/fullName.validator';
-import { LanguageService } from 'src/app/services/language-service';
+import { fullNameValidator } from '../../../validators/fullName.validator';
+import { LanguageService } from '../../../services/language-service';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 
 @Component({
