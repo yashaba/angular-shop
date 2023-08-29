@@ -25,6 +25,7 @@
 
 .back-btn {
     position: absolute;
+    z-index: 1;
     left: 0;
     border-radius: 50%;
     background-color: white;
@@ -40,6 +41,7 @@
 .language-picker-container {
     position: absolute;
     right: 0;
+    z-index: 1;
 
 }
 

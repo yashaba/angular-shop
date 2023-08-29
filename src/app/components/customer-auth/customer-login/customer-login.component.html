@@ -1,4 +1,4 @@
-<div class="flex flex-column full-screen">
+<div class="flex flex-column full-screen slide-fadein-container">
         <div *ngIf="!isLoginByFace && !isLoginByPhone;else loginMethod " class="flex flex-end flex-column full-screen">
                 <div (click)="setLoginType('phone')" class="flex selection-box first">
                         {{selectedLanguageMap.loginByPhone}}</div>

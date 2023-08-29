@@ -1,11 +1,11 @@
-<div class="registration-wrapper flex flex-center" style="height: 100%;">
+<div class="registration-wrapper flex flex-center slide-fadein-container" style="height: 100%;">
     <div class="form-container flex flex-column flex-space-between">
 
         <form *ngIf="currRegistrationPhase < 3"  [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            <div *ngIf="currRegistrationPhase === 0">
+            <div class="slide-fadein-container" *ngIf="currRegistrationPhase === 0" >
               <div class="register">
                 <div class="field">
-                  <input autofocus [(ngModel)]="parentInputValue"  (ngModelChange)="updateChildValue()" type="text" id="fullName" formControlName="fullName" type="text" >
+                  <input  autofocus [(ngModel)]="parentInputValue"  (ngModelChange)="updateChildValue()" type="text" id="fullName" formControlName="fullName" type="text" >
                   <label for="register">
                     <span>{{selectedLanguageMap.fullName}}</span>
                   </label>
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div  *ngIf="currRegistrationPhase === 1" >
+            <div class="slide-fadein-container"  *ngIf="currRegistrationPhase === 1" >
               <div class="register">
                 <div class="field">
                   <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber" autofocus [(ngModel)]="parentInputValue"  (ngModelChange)="updateChildValue()" type="text" >
@@ -37,12 +37,12 @@
 
             </div>
  
-            <div  *ngIf="currRegistrationPhase === 2" >
+            <div class="slide-fadein-container"  *ngIf="currRegistrationPhase === 2" >
                <app-face-recognition (imageCaptured)="onImageCaptured($event)"></app-face-recognition>
             </div>
         
           </form>
-        <div *ngIf="currRegistrationPhase < 3;else submitForm"> <button [disabled]="canProceed(currRegistrationPhase)" (click)="handleNext()">{{selectedLanguageMap.next}}</button></div>
+        <div class="slide-fadein-container" *ngIf="currRegistrationPhase < 3;else submitForm"> <button [disabled]="canProceed(currRegistrationPhase)" (click)="handleNext()">{{selectedLanguageMap.next}}</button></div>
         
         <ng-template #submitForm>
           <div>
@@ -55,6 +55,6 @@
         </div>
         </ng-template>
     </div>
-    <app-on-screen-keyboard [type]="'keyboard'" *ngIf="currRegistrationPhase === 0 "></app-on-screen-keyboard>
-    <app-on-screen-keyboard [type]="'numpad'" *ngIf="currRegistrationPhase === 1 "></app-on-screen-keyboard>
+    <app-on-screen-keyboard style="width: 100%;left:0" class="animation-container" [type]="'keyboard'" *ngIf="currRegistrationPhase === 0 "></app-on-screen-keyboard>
+    <app-on-screen-keyboard style="width: 100%;left:0" class="animation-container" [type]="'numpad'" *ngIf="currRegistrationPhase === 1 "></app-on-screen-keyboard>
 </div>
