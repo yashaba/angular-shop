@@ -21,10 +21,7 @@ export class AppComponent {
   
   
   shouldShowComponentByRoute(excludedRoutes:string[]) {
-   console.log("🚀 ~ file: app.component.ts:32 ~ AppComponent ~ shouldShowComponent ~ this.route.snapshot:", this.router.url)
-  //  console.log("🚀 ~ file: app.component.ts:32 ~ AppComponent ~ shouldShowComponent ~ currentRoute:", currentRoute)
     const currentRoute = this.router.url
-    console.log("🚀 ~ file: app.component.ts:29 ~ AppComponent ~ shouldShowComponent ~ excludedRoutes.includes(currentRoute):", excludedRoutes.includes(currentRoute))
     return  !excludedRoutes.includes(currentRoute) ;
   }
 }

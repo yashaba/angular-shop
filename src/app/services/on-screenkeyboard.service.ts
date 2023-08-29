@@ -10,7 +10,6 @@ export class OnScreenkeyboardService {
   inputValue$ = this.inputValueSubject.asObservable();
 
   updateInputValue(newValue: string) {
-    console.log("🚀 ~ file: on-screenkeyboard.service.ts:13 ~ OnScreenkeyboardService ~ updateInputValue ~ newValue:", newValue)
     this.inputValueSubject.next(newValue);
   }
 }
