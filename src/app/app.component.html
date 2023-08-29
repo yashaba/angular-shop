@@ -5,8 +5,8 @@
 <div class="main-page-background">
   <div class="device-screen">
     <div class="flex flex-space-evenly">
-      <div *ngIf="shouldShowComponentByRoute(['/'])" routerLink="/">{{ languageService.getTranslation('back') }}</div>
-      <div *ngIf="shouldShowComponentByRoute(['/login','/register'])">
+      <div class="back-btn" *ngIf="shouldShowComponentByRoute(['/'])" routerLink="/"><img src="../assets/back.svg" alt="" srcset=""> </div>
+      <div class="language-picker-container" *ngIf="shouldShowComponentByRoute(['/login','/register'])">
         <app-language-picker></app-language-picker>
       </div>
 
