@@ -1,6 +1,6 @@
-<div class="video-container flex flex-column flex-center">
+<div class="video-container flex flex-column flex-center face-login-container">
     <h1>{{selectedLanguageMap.faceRecognition}}</h1>
     <video #videoElement autoplay playsinline></video>
-    <button (click)="takeSnapshot()">{{selectedLanguageMap.setFace}}</button>
+    <div class="click-photo" (click)="takeSnapshot()">{{selectedLanguageMap.setFace}}</div>
     <canvas #canvasElement style="display: none;"></canvas>
 </div>

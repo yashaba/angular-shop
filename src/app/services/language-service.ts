@@ -41,7 +41,7 @@ languageMap : any = {
 
 }
 
-selectedLanguage: string = 'Hebrew'
+selectedLanguage: string = 'English'
 constructor() { }
 
 getLanguageMap(){

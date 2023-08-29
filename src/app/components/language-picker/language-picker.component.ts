@@ -31,7 +31,7 @@ selectingLanguage: boolean = false
   }
 
   ngOnInit(): void {
-    this.selectedLanguage = this.languages[1] as {name:'Hebrew' , icon: '*'}
+    this.selectedLanguage = this.languages[0] as {name:'Hebrew' , icon: '*'}
   }
 
 
