@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./language-picker.component.scss']
 })
 export class LanguagePickerComponent implements OnInit {
-languages = [{name:'English' , icon: '*'} , {name: 'Heberew', icon: '!'}]
+languages = [{name:'English' , icon: 'us'} , {name: 'Hebrew', icon: 'il'}]
 selectedLanguage!: { name: string; icon: string; } 
 selectingLanguage: boolean = false
 

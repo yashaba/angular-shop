@@ -49,6 +49,8 @@ getLanguageMap(){
 }
 
  getTranslation(key:string){
+if (this.languageMap && key &&this.selectedLanguage && this.languageMap[this.selectedLanguage] && this.languageMap[this.selectedLanguage][key])
+
  return this.languageMap[this.selectedLanguage][key]
 }
 

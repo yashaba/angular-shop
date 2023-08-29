@@ -3,6 +3,6 @@
     <div>Welcome <span>to Avacado!</span></div>
     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi laboriosam, ut labore consequuntur, nobis a rem. Aliquid, dolorum.</div>
   </div>
-  <div class="selection-box first flex flex-center" routerLink="/login"> {{selectedLanguageMap?.login}} </div>
-  <div class="selection-box flex flex-center" routerLink="/register" > {{selectedLanguageMap?.register}} </div>
+  <div class="selection-box first flex flex-center" routerLink="/login"> {{ languageService.getTranslation('login')}} </div>
+  <div class="selection-box flex flex-center" routerLink="/register" > {{languageService.getTranslation('register')}} </div>
 </div>
