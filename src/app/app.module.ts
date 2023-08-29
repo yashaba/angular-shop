@@ -15,6 +15,9 @@ import { PhoneKeyboardComponent } from './components/phone-keyboard/phone-keyboa
 import { OnScreenKeyboardComponent } from './components/on-screen-keyboard/on-screen-keyboard.component';
 import { LoggedInCustomerComponent } from './components/logged-in-customer/logged-in-customer.component';
 import { LanguagePickerComponent } from './components/language-picker/language-picker.component';
+import { LanguageService } from './services/language-service';
+
+
 // import {OnScreenKeyboardModule } from './test-module'
 @NgModule({
   declarations: [
@@ -37,7 +40,7 @@ import { LanguagePickerComponent } from './components/language-picker/language-p
     FormsModule
     // OnScreenKeyboardModule
   ],
-  providers: [OnScreenKeyboardComponent],
+  providers: [OnScreenKeyboardComponent,LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
