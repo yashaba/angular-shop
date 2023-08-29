@@ -15,6 +15,8 @@
                 
                 <div *ngIf="fullNameForm?.invalid && (fullNameForm?.dirty || fullNameForm?.touched)">
                   <div *ngIf="fullNameForm?.errors?.required">Full name is required.</div>
+                  <div *ngIf="fullNameForm?.errors?.pattern">Invalid Full Name, must have only one space between words.</div>
+
                 </div>
             </div>
 
@@ -32,7 +34,7 @@
                 <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber">
                 <div *ngIf="phoneNumberForm?.invalid && (phoneNumberForm?.dirty || phoneNumberForm?.touched)">
                   <div *ngIf="phoneNumberForm?.errors?.required">Phone number is required.</div>
-                  <div *ngIf="phoneNumberForm?.errors?.pattern">Invalid phone number format.</div>
+                  <div *ngIf="phoneNumberForm?.errors?.pattern">Invalid phone number format, must be 10 digits long.</div>
                 </div>
 
             </div>
