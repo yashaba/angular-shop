@@ -54,8 +54,16 @@
     background-color: green;
 }
 
+.numpad-layout {
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* text-align: center; */
+    width: 25%;
+    margin: 0 auto;
 
-
+}
 
 
 

@@ -7,7 +7,7 @@
 
         <!-- For Future Login Methods -->
         <ng-template #loginMethod class="flex flex-center-x">
-                <div *ngIf="isLoginByFace">
+                <div class="slide-fadein-container" *ngIf="isLoginByFace">
                         <app-face-recognition (imageCaptured)="login()"></app-face-recognition>
                 </div>
                 <div *ngIf="isLoginByPhone" class="loginByPhone-container">

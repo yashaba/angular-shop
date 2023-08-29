@@ -14,7 +14,7 @@
 </div>
 
 <div *ngIf="type === 'numpad'"  class="keyboard-container">
-    <section class="keys-section flex flex-center">
+    <section class="keys-section flex flex-center numpad-layout">
         <div (click)="addCharacter(number)" class="key flex flex-center" *ngFor=" let number of numbers">
             {{number}}
         </div>
