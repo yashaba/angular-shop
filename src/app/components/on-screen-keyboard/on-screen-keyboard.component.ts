@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, fromEvent, merge, of } from 'rxjs';
-import { LanguageService } from 'src/app/services/language-service';
-import { OnScreenkeyboardService } from 'src/app/services/on-screenkeyboard.service';
+import { LanguageService } from '../../services/language-service';
+import { OnScreenkeyboardService } from '../../services/on-screenkeyboard.service';
 
 @Component({
   selector: 'app-on-screen-keyboard',
