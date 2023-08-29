@@ -88,9 +88,18 @@
     font-size: 4rem;
   }
 
-  &.click-photo {
+  .click-photo {
+    border: 2px solid white;
+    border-radius: 10%;
+    padding: 10px;
+    color: white;
+    margin: 15px;
+    font-size: 2rem;
+
+    &:hover {
     color: #0a7ad3;
     background-color: white;
+    }
   }
 }
 

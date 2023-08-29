@@ -1,60 +1,66 @@
 <div class="registration-wrapper flex flex-center" style="height: 100%;">
-    <div class="form-container flex flex-column flex-space-between">
+  <div class="form-container flex flex-column flex-space-between">
 
-        <form *ngIf="currRegistrationPhase < 3"  [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            <div *ngIf="currRegistrationPhase === 0">
-              <div class="register">
-                <div class="field">
-                  <input autofocus [(ngModel)]="parentInputValue"  (ngModelChange)="updateChildValue()" type="text" id="fullName" formControlName="fullName" type="text" >
-                  <label for="register">
-                    <span>{{selectedLanguageMap.fullName}}</span>
-                  </label>
-                </div>
-              </div>
-      
-                
-                <div *ngIf="fullNameForm?.invalid && (fullNameForm?.dirty || fullNameForm?.touched)">
-                  <div *ngIf="fullNameForm?.errors?.required">Full name is required.</div>
-                </div>
-            </div>
-
-            <div  *ngIf="currRegistrationPhase === 1" >
-              <div class="register">
-                <div class="field">
-                  <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber" autofocus [(ngModel)]="parentInputValue"  (ngModelChange)="updateChildValue()" type="text" >
-                  <label for="register">
-                    <span>{{selectedLanguageMap.phoneNumber}}</span>
-                  </label>
-                </div>
-              </div>
-
-                <label for="phoneNumber">{{selectedLanguageMap.phoneNumber}}:</label>
-                <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber">
-                <div *ngIf="phoneNumberForm?.invalid && (phoneNumberForm?.dirty || phoneNumberForm?.touched)">
-                  <div *ngIf="phoneNumberForm?.errors?.required">Phone number is required.</div>
-                  <div *ngIf="phoneNumberForm?.errors?.pattern">Invalid phone number format.</div>
-                </div>
-
-            </div>
- 
-            <div  *ngIf="currRegistrationPhase === 2" >
-               <app-face-recognition (imageCaptured)="onImageCaptured($event)"></app-face-recognition>
-            </div>
-        
-          </form>
-        <div *ngIf="currRegistrationPhase < 3;else submitForm"> <button [disabled]="canProceed(currRegistrationPhase)" (click)="handleNext()">{{selectedLanguageMap.next}}</button></div>
-        
-        <ng-template #submitForm>
-          <div>
-            <div>{{selectedLanguageMap.fullName}}: {{fullNameForm?.value}}</div>
-            <div>{{selectedLanguageMap.phoneNumber}}:{{phoneNumberForm?.value}}</div>
-            <img [src]="capturedImage" style="width: 100%;" *ngIf="capturedImage">
-            <div>{{myForm.value | json}}</div>
-            <button  type="submit" routerLink="/shop" [disabled]="myForm.invalid">{{selectedLanguageMap.createAccount}}</button>
-            <button (click)="resetForm()" >{{selectedLanguageMap.reset}}</button>
+    <form *ngIf="currRegistrationPhase < 3" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="currRegistrationPhase === 0">
+        <div class="register">
+          <div class="field">
+            <input autofocus [(ngModel)]="parentInputValue" (ngModelChange)="updateChildValue()" type="text"
+              id="fullName" formControlName="fullName" type="text">
+            <label for="register">
+              <span>{{selectedLanguageMap.fullName}}</span>
+            </label>
+          </div>
         </div>
-        </ng-template>
-    </div>
-    <app-on-screen-keyboard [type]="'keyboard'" *ngIf="currRegistrationPhase === 0 "></app-on-screen-keyboard>
-    <app-on-screen-keyboard [type]="'numpad'" *ngIf="currRegistrationPhase === 1 "></app-on-screen-keyboard>
+
+
+        <div *ngIf="fullNameForm?.invalid && (fullNameForm?.dirty || fullNameForm?.touched)">
+          <div *ngIf="fullNameForm?.errors?.required">Full name is required.</div>
+        </div>
+      </div>
+
+      <div *ngIf="currRegistrationPhase === 1">
+        <div class="register">
+          <div class="field">
+            <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber" autofocus
+              [(ngModel)]="parentInputValue" (ngModelChange)="updateChildValue()" type="text">
+            <label for="register">
+              <span>{{selectedLanguageMap.phoneNumber}}</span>
+            </label>
+          </div>
+        </div>
+
+        <label for="phoneNumber">{{selectedLanguageMap.phoneNumber}}:</label>
+        <input [maxlength]="10" type="tel" id="phoneNumber" formControlName="phoneNumber">
+        <div *ngIf="phoneNumberForm?.invalid && (phoneNumberForm?.dirty || phoneNumberForm?.touched)">
+          <div *ngIf="phoneNumberForm?.errors?.required">Phone number is required.</div>
+          <div *ngIf="phoneNumberForm?.errors?.pattern">Invalid phone number format.</div>
+        </div>
+
+      </div>
+
+      <div *ngIf="currRegistrationPhase === 2">
+        <app-face-recognition (imageCaptured)="onImageCaptured($event)"></app-face-recognition>
+      </div>
+
+    </form>
+    <div *ngIf="currRegistrationPhase < 3;else submitForm"> <button class="next-btn"[disabled]="canProceed(currRegistrationPhase)"
+        (click)="handleNext()">{{selectedLanguageMap.next}}</button></div>
+
+    <ng-template #submitForm>
+      <div class="test">
+        <img [src]="capturedImage"* style="width: 200px;height: 200px;" ngIf="capturedImage">
+        <div>
+          <div>{{selectedLanguageMap.fullName}}: {{fullNameForm?.value}}</div>
+          <div>{{selectedLanguageMap.phoneNumber}}:{{phoneNumberForm?.value}}</div>
+        </div>
+        <!-- <div>{{myForm.value | json}}</div> -->
+        <button type="submit" routerLink="/shop"
+          [disabled]="myForm.invalid" class="selection-box">{{selectedLanguageMap.createAccount}}</button>
+        <button (click)="resetForm()" class="selection-box">{{selectedLanguageMap.reset}}</button>
+      </div>
+    </ng-template>
+  </div>
+  <app-on-screen-keyboard [type]="'keyboard'" *ngIf="currRegistrationPhase === 0 "></app-on-screen-keyboard>
+  <app-on-screen-keyboard [type]="'numpad'" *ngIf="currRegistrationPhase === 1 "></app-on-screen-keyboard>
 </div>

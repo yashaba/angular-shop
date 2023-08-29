@@ -18,6 +18,29 @@ div :nth-last-child(1) {
 
 }
 
+.test {
+   width: 100%;
+   height: 40vh;
+   display: flex;
+   flex-direction: column;
+
+   img {
+      border-radius: 50%;
+   }
+
+   div {
+      div {
+         color: white;
+         &:first-child {
+            font-size: 2rem;
+         }
+         &:nth-child(1) {
+            font-size: 1.6rem;
+         }
+      }
+   }
+}
+
 
 
 

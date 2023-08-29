@@ -53,6 +53,7 @@ export class CustomerRegisterComponent implements OnInit,AfterViewInit {
   //  }
 
   onImageCaptured(imageDataUrl: string) {
+    console.log("🚀 ~ file: customer-register.component.ts:56 ~ CustomerRegisterComponent ~ onImageCaptured ~ imageDataUrl:", imageDataUrl)
     this.capturedImage = imageDataUrl;
     this.myForm.get('faceRecognition')?.setValue(imageDataUrl)
   }
@@ -98,14 +99,12 @@ export class CustomerRegisterComponent implements OnInit,AfterViewInit {
   // }
    onSubmit() {
      if (this.myForm.valid) {
-       console.log('Form submitted successfully!', this.myForm.value);
      }
    }
 
   canProceed(pageNumber:number){
     const bla1 = Object.keys(this.myForm.controls)[pageNumber]
     const controlValue = this.myForm.controls[bla1]
-    console.log("🚀 ~ file: customer-register.component.ts:88 ~ CustomerRegisterComponent ~ ngOnInit ~ controlValue:", controlValue.valid)
     return !controlValue.valid
 
   }
