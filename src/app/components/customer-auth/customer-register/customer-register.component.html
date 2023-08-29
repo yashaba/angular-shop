@@ -30,7 +30,7 @@
 
                 <div class="warning-messages" *ngIf="phoneNumberForm?.invalid && (phoneNumberForm?.dirty || phoneNumberForm?.touched)">
                   <div *ngIf="phoneNumberForm?.errors?.required">Phone number is required.</div>
-                  <div *ngIf="phoneNumberForm?.errors?.pattern">Phone Number must be 10 digits long.</div>
+                  <div *ngIf="phoneNumberForm?.errors?.pattern">Invalid phone number format, must be 10 digits long.</div>
                 </div>
 
             </div>
