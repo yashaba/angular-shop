@@ -92,14 +92,10 @@ export class OnScreenKeyboardComponent implements OnInit {
     this.isShift = false
     this.transformCharacterCase()
     this.onScreenkeyboardService.updateInputValue(this.currSentance);
-    console.log(this.currSentance);
   }
   removeCharacter() {
     this.currSentance = this.currSentance.slice(0, this.currSentance.length - 1)
     this.onScreenkeyboardService.updateInputValue(this.currSentance);
-
-    console.log(this.currSentance);
-
   }
 
 }

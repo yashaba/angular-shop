@@ -61,7 +61,6 @@ export class CustomerRegisterComponent implements OnInit,AfterViewInit {
   //  }
 
   onImageCaptured(imageDataUrl: string) {
-    console.log("🚀 ~ file: customer-register.component.ts:56 ~ CustomerRegisterComponent ~ onImageCaptured ~ imageDataUrl:", imageDataUrl)
     this.capturedImage = imageDataUrl;
     this.myForm.get('faceRecognition')?.setValue(imageDataUrl)
   }
